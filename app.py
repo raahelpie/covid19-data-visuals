@@ -2,13 +2,9 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Output, Input
-import datetime
-from dateutil.relativedelta import relativedelta
 import plotly.graph_objs as go
 import pandas as pd
 
-start = datetime.datetime.today() - relativedelta(years=5)
-end = datetime.datetime.today()
 
 day2day = pd.read_csv('day2day.csv')
 df_day2day = day2day.apply(pd.to_numeric, errors="ignore")
