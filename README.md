@@ -1,4 +1,4 @@
-# Data representation of COVID19 cases in India
+# Data visualization of COVID19 cases in India
 
 ### Using Plotly for Data Visualization and Dash as the web-framework (In development stage)
 
