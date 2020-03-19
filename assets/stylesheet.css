@@ -1,0 +1,35 @@
+.banner {
+    height: 75px;
+    background-color: rgb(66, 196, 247);
+    border-radius: 2px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+}
+
+.banner h1{
+    color: white;
+    font-family: Bahnschrift;
+    margin-left: 2%;
+    display: inline-block;
+}
+
+.banner Img{
+    position: relative;
+    float: right;
+    right: 10px;
+    height: 75px;
+}
+
+.okay {
+    padding: 50px;
+    box-radius: 25px;
+    margin: 50px auto;
+    width: 60%;
+}
+
+.okay1 {
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 6px rgba(0, 0, 0, 0.24);
+}
+
+.okay2 {
+box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 6px rgba(0, 0, 0, 0.24);
+}
