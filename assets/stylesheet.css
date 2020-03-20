@@ -1,5 +1,5 @@
 body {
-    background-image: url("/assets/wall3.jpg");
+    background-image: url('/assets/stat.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     font-family: Bahnschrift;
@@ -34,17 +34,11 @@ body {
     box-radius: 25px;
     margin: 50px auto;
     width: 50%;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.6), 0 1px 6px rgba(0, 0, 0, 0.6);
     background-color: white;
     opacity: 0.95;
 }
 
-.okay1 {
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.6), 0 1px 6px rgba(0, 0, 0, 0.6);
-}
-
-.okay2 {
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.6), 0 1px 6px rgba(0, 0, 0, 0.6);
-}
 
 .grow {
     transition: all .3s ease-in-out;

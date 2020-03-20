@@ -8,10 +8,9 @@ import pandas as pd
 
 day2day = pd.read_csv('day2day.csv')
 df_day2day = day2day.apply(pd.to_numeric, errors="ignore")
-df_bar_day2day = df_day2day.head(25)
 trace_cases = go.Scatter(
-    x=df_bar_day2day['Date'],
-    y=df_bar_day2day['Cases'],
+    x=df_day2day['Date'],
+    y=df_day2day['Cases'],
     name="Total",
     mode="lines+markers",
     marker=dict(size=10, opacity=0.5),
@@ -19,8 +18,8 @@ trace_cases = go.Scatter(
     opacity=0.9
 )
 trace_active = go.Scatter(
-    x=df_bar_day2day['Date'],
-    y=df_bar_day2day['Active'],
+    x=df_day2day['Date'],
+    y=df_day2day['Active'],
     name="Active",
     mode="lines+markers",
     marker=dict(size=10, opacity=0.5),
@@ -28,8 +27,8 @@ trace_active = go.Scatter(
     opacity=0.9
 )
 trace_deaths = go.Scatter(
-    x=df_bar_day2day['Date'],
-    y=df_bar_day2day['Deaths'],
+    x=df_day2day['Date'],
+    y=df_day2day['Deaths'],
     name="Deaths",
     mode="lines+markers",
     marker=dict(size=10, opacity=0.5),
@@ -37,19 +36,33 @@ trace_deaths = go.Scatter(
     opacity=0.9
 )
 trace_recoveries = go.Scatter(
-    x=df_bar_day2day['Date'],
-    y=df_bar_day2day['Recoveries'],
+    x=df_day2day['Date'],
+    y=df_day2day['Recoveries'],
     name="Recoveries",
     mode="lines+markers",
     marker=dict(size=10, opacity=0.5),
     line=dict(color='#00FF00'),
     opacity=0.9
 )
+trace_new = go.Scatter(
+    x=df_day2day['Date'],
+    y=df_day2day['New Cases'],
+    name="Cases",
+    mode="lines+markers",
+    marker=dict(size=10, opacity=0.5),
+    line=dict(color='#000000'),
+    opacity=0.9
+)
+
 
 data1 = [trace_cases, trace_active, trace_deaths, trace_recoveries]
 layout1 = dict(title="Date-wise statistics of COVID-19, India")
-
 fig1 = dict(data=data1, layout=layout1)
+
+data_new = [trace_new]
+layout_new = dict(title="Day to Day comparison of New Cases")
+fig_new = dict(data=data_new, layout=layout_new)
+
 
 cvirus = pd.read_csv('covid19-india.csv')
 df_cvirus = cvirus.apply(pd.to_numeric, errors="ignore")
@@ -87,8 +100,20 @@ layout2 = dict(
     barmode="stack",
 )
 
-fig2 = dict(data=data2, layout=layout2)
 
+donutLabels = df_new_cvirus['state_name']
+donutValues = df_new_cvirus['active_cases']
+donutData = go.Pie(
+        labels=donutLabels,
+        values=donutValues,
+        hole=.4
+)
+donutLayout = dict(title="State-wise Pie Chart")
+
+fig2 = dict(data=data2, layout=layout2)
+fig3 = go.Figure(data=donutData, layout=donutLayout)
+fig3.update_traces(hoverinfo='label+percent', textinfo='percent', textfont_size=10,
+                   marker=dict(colors=colors, line=dict(color='#000000', width=0.2)))
 external_stylesheets = ['https://codepen.io/criddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__)
@@ -103,11 +128,19 @@ app.layout = html.Div([
     html.Div([
         dcc.Graph(id="Daily Trend",
                   figure=fig1)
-    ], className="okay okay1 grow"),
+    ], className="okay grow"),
+    html.Div([
+        dcc.Graph(id="New Cases",
+                  figure=fig_new)
+    ], className="okay grow"),
     html.Div([
         dcc.Graph(id="Bar Graph",
                   figure=fig2)
-    ], className="okay okay2 grow"),
+    ], className="okay grow"),
+    html.Div([
+        dcc.Graph(id="StatesPie",
+                  figure=fig3)
+    ], className="okay grow"),
 ])
 
 
