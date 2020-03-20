@@ -122,7 +122,7 @@ app.layout = html.Div([
     html.Div([
         html.Img(src="/assets/cv19.jpg"),
         html.A([
-            html.H1(children="CV19 App (India focused)"),
+            html.H1(children="COVID19 (India focused)"),
         ], href="https://covid2019-india.herokuapp.com/"),
         html.H6(children="Written by Raahel Baig"),
     ], className="banner"),
