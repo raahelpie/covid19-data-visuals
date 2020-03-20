@@ -115,29 +115,33 @@ fig3.update_traces(hoverinfo='label+percent', textinfo='percent', textfont_size=
                    marker=dict(colors=colors, line=dict(color='#000000', width=0.2)))
 external_stylesheets = ['https://codepen.io/criddyp/pen/bWLwgP.css']
 
-app = dash.Dash(__name__)
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
 
 app.layout = html.Div([
     html.Div([
-
-    ]),
+        html.Img(src="/assets/cv19.jpg"),
+        html.A([
+            html.H1(children="CV19 App (India focused)"),
+        ], href="https://covid2019-india.herokuapp.com/"),
+        html.H6(children="Written by Raahel Baig"),
+    ], className="banner"),
     html.Div([
         dcc.Graph(id="Daily Trend",
                   figure=fig1)
-    ], className="okay grow"),
+    ], className="col-6 okay grow"),
     html.Div([
         dcc.Graph(id="New Cases",
                   figure=fig_new)
-    ], className="okay grow"),
+    ], className="col-6 okay grow"),
     html.Div([
         dcc.Graph(id="Bar Graph",
                   figure=fig2)
-    ], className="okay grow"),
+    ], className="col-6 okay grow"),
     html.Div([
         dcc.Graph(id="StatesPie",
                   figure=fig3)
-    ], className="okay grow"),
+    ], className="col-6 okay grow"),
 ])
 
 
