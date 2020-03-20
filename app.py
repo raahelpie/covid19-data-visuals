@@ -119,7 +119,9 @@ app = dash.Dash(__name__)
 server = app.server
 
 app.layout = html.Div([
+    html.Div([
 
+    ]),
     html.Div([
         dcc.Graph(id="Daily Trend",
                   figure=fig1)
