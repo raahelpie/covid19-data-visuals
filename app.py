@@ -121,11 +121,6 @@ server = app.server
 app.layout = html.Div([
 
     html.Div([
-        html.H1(children="CV19 App"),
-        html.Img(src="/assets/cv19.jpg")
-    ], className="banner"),
-
-    html.Div([
         dcc.Graph(id="Daily Trend",
                   figure=fig1)
     ], className="okay grow"),
