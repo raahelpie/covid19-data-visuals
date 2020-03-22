@@ -115,16 +115,14 @@ fig3.update_traces(hoverinfo='label+percent', textinfo='percent', textfont_size=
                    marker=dict(colors=colors, line=dict(color='#000000', width=0.2)))
 external_stylesheets = ['https://codepen.io/criddyp/pen/bWLwgP.css']
 
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets, meta_tags=[
-        {"name": "viewport", "content": "width=device-width, initial-scale=1"}
-    ])
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
 
 app.layout = html.Div([
     html.Div([
         html.Img(src="/assets/cv19.jpg"),
         html.A([
-            html.H2(["COVID19 (India focused)", html.Sub('     written by Raahel Baig')]),
+            html.H2(["COVID19 (India focused)", html.Sub('written by Raahel Baig')]),
         ], href="https://covid2019-india.herokuapp.com/"),
     ], className="banner"),
     html.Div([
