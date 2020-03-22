@@ -24,7 +24,7 @@ body {
     height: 65px;
 }
 
-.banner h1{
+.banner h2{
     color: white;
     font-family: Bahnschrift;
     margin-left: 40%;
@@ -32,20 +32,16 @@ body {
     display: inline-block;
 }
 
-.banner h6{
+.banner h2 sub{
     color: white;
-    font-family: Bahnschrift;
-    margin-down: 20%;
-    margin-left: 20%;
+    font-family: Century Gothic;
+    font-size: 12px;
+    font-weight: lighter;
+    margin-left: 15px;
     display: inline-block;
 }
 
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  [class*="col-"] {
-    width: 80%;
-  }
-}
+
 .okay {
     padding: 20px;
     box-radius: 25px;
