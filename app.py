@@ -64,8 +64,7 @@ fig_new = dict(data=data_new, layout=layout_new)
 
 
 cvirus = pd.read_csv('covid19-india.csv')
-df_cvirus = cvirus.apply(pd.to_numeric, errors="ignore")
-df_new_cvirus = df_cvirus.head(20)
+df_new_cvirus = cvirus.apply(pd.to_numeric, errors="ignore")
 
 trace1 = go.Bar(
     x=df_new_cvirus['state_name'],
