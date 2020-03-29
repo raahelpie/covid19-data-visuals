@@ -1,28 +1,28 @@
 S. No.,state_name,active_cases,total_cured,total_deaths
-1,Andhra Pradesh,13,1,0
-2,Delhi,32,6,1
-3,Haryana,22,11,0
-4,Karnataka,50,3,2
-5,Kerala,162,11,0
-6,Maharashtra,150,25,5
+1,Andhra Pradesh,18,1,0
+2,Delhi,41,6,2
+3,Haryana,16,17,0
+4,Karnataka,68,5,3
+5,Kerala,166,15,1
+6,Maharashtra,155,25,6
 7,Odisha,3,0,0
 8,Pondicherry,1,0,0
 9,Punjab,36,1,1
-10,Rajasthan,45,3,0
-11,Tamil Nadu,35,2,1
-12,Telengana,47,1,0
-13,Chandigarh,7,0,0
-14,J&K,16,1,1
+10,Rajasthan,52,3,0
+11,Tamil Nadu,44,4,1
+12,Telengana,64,1,1
+13,Chandigarh,8,0,0
+14,J&K,28,1,2
 15,Ladakh,10,3,0
-16,Uttar Pradesh,34,11,0
+16,Uttar Pradesh,54,11,0
 17,Uttarakhand,5,0,0
-18,West Bengal,14,0,1
-19,Chhattisgarh,6,0,0
+18,West Bengal,17,0,1
+19,Chhattisgarh,7,0,0
 20,Madhya Pradesh,28,0,2
 21,Himachal Pradesh,2,0,1
-22,Gujarat,42,0,3
-23,Bihar,8,0,1
+22,Gujarat,52,1,5
+23,Bihar,10,0,1
 24,Manipur,1,0,0
 25,Mizoram,1,0,0
-26,Andaman & Nicobar Islands,2,0,0
-27,Goa,3,0,0
+26,Andaman & Nicobar Islands,9,0,0
+27,Goa,5,0,0
